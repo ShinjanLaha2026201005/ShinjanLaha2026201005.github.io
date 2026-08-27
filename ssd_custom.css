@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* --- Theme Variables --- */
+:root {
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --bg-color: #0d1117;
+  --card-bg: #161b22;
+  --table-head-bg: #21262d;
+  --table-hover: #1f242c;
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --accent: #58a6ff;
+  --accent-hover: #79c0ff;
+  --border: #30363d;
+  --badge-bg: rgba(56, 139, 253, 0.15);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --radius: 8px;
+}
+
+/* --- Base Page Reset & Layout --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family) !important;
+  background-color: var(--bg-color) !important;
+  color: var(--text-primary) !important;
+  line-height: 1.7;
+  padding: 2.5rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto !important;
+}
+
+/* Fix the obsolete font tags */
+font {
+  font-family: inherit !important;
+  color: inherit !important;
+}
+
+/* --- Override Nested Table Layouts --- */
+table {
+  width: 100% !important;
+  max-width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  margin: 1.75rem 0 !important;
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* Outer layout tables treated as clean card sections */
+table[border="0"] {
+  border: 1px solid var(--border) !important;
+  padding: 1.5rem !important;
+}
+
+/* Header & Banner styling */
+h1 {
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem !important;
+}
+
+h3 {
+  font-size: 1.15rem !important;
+  font-weight: 500 !important;
+  color: var(--accent) !important;
+  margin: 0.25rem 0 !important;
+}
+
+/* --- Text & Lists --- */
+p {
+  color: var(--text-primary) !important;
+  font-size: 0.98rem;
+  margin-bottom: 1rem;
+}
+
+b, strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+li {
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}
+
+li b {
+  color: var(--text-primary);
+}
+
+/* --- Navigation & Links --- */
+a {
+  color: var(--accent) !important;
+  text-decoration: none !important;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--accent-hover) !important;
+  text-decoration: underline !important;
+}
+
+/* Turn top-level navigation links into pills */
+td > a[href^="#"] {
+  display: inline-block;
+  background: var(--table-head-bg);
+  color: var(--accent) !important;
+  padding: 0.35rem 0.85rem;
+  margin: 0.35rem 0.2rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 0.88rem;
+  text-decoration: none !important;
+}
+
+td > a[href^="#"]:hover {
+  background: var(--accent);
+  color: #0d1117 !important;
+  border-color: var(--accent);
+}
+
+/* --- Tables (Lecture, Lab & Exam Schedules) --- */
+th {
+  background-color: var(--table-head-bg) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  padding: 0.85rem 1rem !important;
+  border-bottom: 2px solid var(--border) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+td {
+  padding: 0.85rem 1rem !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+tr:last-child td {
+  border-bottom: none !important;
+}
+
+tbody tr:hover td {
+  background-color: var(--table-hover) !important;
+}
+
+/* Subheader title rows in tables */
+td[colspan] {
+  background-color: var(--table-head-bg) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 1rem !important;
+}
+
+td[colspan] b {
+  color: #ffffff;
+  font-size: 1.15rem;
+}
+
+/* --- Divider Lines --- */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+/* --- Responsive Viewport for Mobile Devices --- */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  h1 {
+    font-size: 1.6rem !important;
+  }
+}
